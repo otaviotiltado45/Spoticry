@@ -1,19 +1,72 @@
-/* Estilos globais para a aplicação */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-}
-
-h1, h2, h3 {
     color: #333;
-}
-
-button {
+  }
+  
+  h1, h2, h3 {
+    color: #008CBA;
+  }
+  
+  header {
+    background-color: #008CBA;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .playlist-card {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .playlist-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .playlist-card h3 {
+    font-size: 1.5em;
+  }
+  
+  .playlist-card p {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  button {
     background-color: #008CBA;
     color: white;
     padding: 10px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-}
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #005f73;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
