@@ -9,10 +9,20 @@ const Home = () => {
 
   return (
     <div>
-      <h2>Playlists</h2>
-      {playlists.map((playlist, index) => (
-        <PlaylistCard key={index} {...playlist} />
-      ))}
+      <header>
+        <h1>Spoticry</h1>
+      </header>
+
+      <div className="container">
+        <h2>Playlists</h2>
+        {playlists.map((playlist, index) => (
+          <PlaylistCard key={index} {...playlist} />
+        ))}
+      </div>
+
+      <footer>
+        <p>&copy; 2024 Spoticry. Todos os direitos reservados.</p>
+      </footer>
     </div>
   );
 };
