@@ -24,10 +24,9 @@ const Login = () => {
       }
 
       const data = await response.json();
-      // Armazenar o token JWT no localStorage ou no estado global
       localStorage.setItem('authToken', data.token);
       alert('Login bem-sucedido!');
-      // Redirecionar ou fazer outras ações após o login bem-sucedido
+      
     } catch (error) {
       setErrorMessage('Erro ao fazer login, tente novamente.');
     }
