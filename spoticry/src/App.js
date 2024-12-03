@@ -1,15 +1,19 @@
 import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import CreatePlaylist from './pages/CreatePlaylist';
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <Home />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/create-playlist" element={<CreatePlaylist />} />
+        {/* Adicione outras rotas conforme necessário */}
+      </Routes>
+    </Router>
   );
 };
 

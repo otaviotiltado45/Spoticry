@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';  // useNavigate para navegação
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate();  // Usando useNavigate
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,33 +24,45 @@ const Login = () => {
       if (!response.ok) {
         throw new Error('Login falhou');
       }
+      
 
       const data = await response.json();
+      // Armazenando o token no localStoragej
       localStorage.setItem('authToken', data.token);
-      alert('Login bem-sucedido!');
-      
+      const token = localStorage.getItem("authToken");
+  if (token) {
+    console.log("Token encontrado:", token);
+} else {
+    console.log("Token não encontrado no Local Storage.");
+}
+      console.log(token);
+      // Redirecionando para a página Home após o login
+      navigate('/home');
     } catch (error) {
-      setErrorMessage('Erro ao fazer login, tente novamente.');
+      setMessage('Erro ao fazer login. Tente novamente.');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-      {errorMessage && <p>{errorMessage}</p>}
-    </form>
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Login</button>
+      </form>
+      {message && <p>{message}</p>}
+    </div>
   );
 };
 
