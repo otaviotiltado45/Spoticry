@@ -126,23 +126,6 @@ return <p>{isLoading ? "Carregando..." : "Dados carregados"}</p>;
 Para mais detalhes, veja a [[documentação completa da API](https://documenter.getpostman.com/view/20306176/2s9YJc23Ap)](#).
 
 
-
----
-
-## 💡 Contribuindo
-
-1. Faça um fork do repositório.
-2. Crie uma branch para sua funcionalidade: `git checkout -b minha-feature`.
-3. Commit suas alterações: `git commit -m "Descrição da funcionalidade"`.
-4. Faça o push para a branch: `git push origin minha-feature`.
-5. Crie um pull request.
-
----
-
-## 📝 Licença
-
-Este projeto está licenciado sob a licença MIT.
-
 ---
 
 **Desenvolvido por [Otávio Barros,Samuel Carlos de Souza]** 🚀
